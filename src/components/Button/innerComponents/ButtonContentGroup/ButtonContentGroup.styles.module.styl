@@ -1,0 +1,26 @@
+@import('../../../../styles/variables/variables.styl')
+
+.box
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: stretch
+  flex-wrap: nowrap
+  width: 100%
+  position: relative
+  visibility: visible
+  opacity: 1
+  transition: visibility .15s $animation-func, opacity .15s $animation-func
+
+.size-small
+  gap: 4px
+
+.size-medium
+  gap: 6px
+
+.size-large
+  gap: 8px
+
+.loading
+  visibility: hidden
+  opacity: 0

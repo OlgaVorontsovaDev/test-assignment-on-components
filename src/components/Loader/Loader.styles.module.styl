@@ -1,0 +1,66 @@
+@import '../../styles/variables/variables.styl';
+
+calcBorderWidth(size)
+  size / 8
+
+loaderSize(size)
+  width (size)px
+  height: (size)px
+  border-width: calcBorderWidth(size)px
+
+.loader
+  display: block
+  aspect-ratio: 1
+  border-radius: 50%
+  border-style: solid
+  animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear
+
+.loader-large
+  loaderSize(24)
+
+.loader-medium
+  loaderSize(20)
+
+.loader-small
+  loaderSize(16)
+
+.primary
+  border-color: $primary-text-color
+
+.secondary
+  border-color: $secondary-text-color
+
+@keyframes l20-1
+  0%
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+
+  12.5%
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+
+  25%
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+
+  50%
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0 100%)
+
+  62.5%
+    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0 100%)
+
+  75%
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0 100%)
+
+  100%
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0 100%)
+
+@keyframes l20-2
+  0%
+    transform: scaleY(1) rotate(0deg)
+
+  49.99%
+    transform: scaleY(1) rotate(135deg)
+
+  50%
+    transform: scaleY(-1) rotate(0deg)
+
+  100%
+    transform: scaleY(-1) rotate(-135deg)
